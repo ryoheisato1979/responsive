@@ -1,0 +1,90 @@
+// ==============================
+// 変数
+// ==============================
+
+$font-color_default: #000;
+$font-color_title: #fff;
+$font-color_subTitle: #3e89ca;
+$color_corp: #e3a8b1;
+
+$bgColor_default: #f8f5ea;
+$bgColor_experience: #fcb670;
+$bgColor_experience_sub: #fdcc9b;
+$bgColor_enjoy: #ffe16c;
+$bgColor_enjoy_sub: #fff0b7;
+$bgColor_purchase: #cadb75;
+$bgColor_purchase_sub: #dae69f;
+$bgColor_faq: #b2d6e3;
+$bgColor_faq_sub: #c5e0ea;
+
+
+$site-width: 980px;
+
+$font-size_s: 12px;
+$font-size_m: 14px;
+$font-size_default: 16px;
+$font-size_l: 18px;
+$font-size_xl: 24px;
+$font-size_xxl: 30px;
+$font-size_3l: 38px;
+$font-size_4l: 45px;
+
+$space_s: 5px;
+$space_m: 10px;
+$space_l: 15px;
+$space_xl: 20px;
+$space_xxl: 30px;
+$space_3l: 40px;
+
+$font-family_default: "Yu Gothic", YuGothic,　"M PLUS Rounded 1c", "Sawarabi Gothic", Quicksand, 游ゴシック体, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; // TODO:リファクタ必要（変数にする）
+$font-family_corp: 'Amatic SC', cursive;
+$font-family_title: "M PLUS Rounded 1c", cursive;
+
+// 通常、変数として設定しておくと後々変更しやすくて便利
+//  !defaultはすでに変数に値が入っていた場合は何もせず、変数に値が入っていない時に割り当てられるもの
+// https://hail2u.net/blog/webdesign/how-to-use-bang-default-flag-in-sass-and-how-it-works.html
+//$breakpoint-sm: 400px !default;
+//$breakpoint-md: 768px !default;
+//$breakpoint-lg: 1000px !default;
+
+// マップ型変数を使うと便利
+$breakpoints: (
+  'sm': 'screen and (max-width: 414px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1000px)',
+  'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+// ==============================
+// mixin
+// ==============================
+// @mixinは関数のようなものを作れる
+// https://www.webcreatorbox.com/tech/sass-mixin
+// map-get()の第一引数に変数名、第二引数にマップ型のキーを渡すと、マップ型の値が返る
+// #{}は「インターポーレーション」といって、演算できない箇所、変数使えない箇所でも使えるようにするものcalcなどでよく使う
+// http://book.scss.jp/code/c4/08.html
+@mixin mq($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq($breakpoint: lg) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+@mixin mq($breakpoint: xl) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+

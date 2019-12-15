@@ -1,0 +1,47 @@
+body{
+    font-family: $font-family_default;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    width: 100%;
+    @include mq () {
+        width: 100%;
+    }
+}
+.l-hero{
+    height: 700px;
+    background: $bgColor_default;
+    @include mq() {
+        width: 100%;
+        height: 30vh;
+    }
+}
+.l-gallery{
+    width: 100%;
+    background: $bgColor_default;
+}
+.l-experience{
+    width: 100%;
+    background: $bgColor_experience_sub;
+}
+
+.l-enjoy{
+    width: 100%;
+    background: $bgColor_enjoy_sub;
+}
+.l-purchase{
+    width: 100%;
+    background: $bgColor_purchase_sub;
+}
+.l-faq{
+    width: 100%;
+    background: $bgColor_faq_sub;
+}
+
+.l-container{
+    margin: 0 auto;
+    text-align: center;
+    width: 1000px;
+    @include mq () {
+        width: 100%;
+    }
+}
